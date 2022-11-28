@@ -1,0 +1,70 @@
+Higher order functions
+A function which takes another function as an argument or returns a function from it is known as higher order function 
+
+function x(){
+    console.log("Hello");
+}
+function y(x){
+    x();
+}
+
+
+Map,Filter,Reduce
+
+Map function is use to transform an array
+transform a array and get a new array out of it
+
+Map
+const arr = [ 5,1,3,2,6 ];
+function double(x){
+    return x * 2;
+}
+
+function triple(x){
+    return x*3;
+}
+const output = arr.map(triple);
+console.log(output);
+
+
+const arr = [ 5,1,3,2,6 ];
+function binary(x){
+    return x.toString(2);
+}
+const output = arr.map(binary);
+console.log(output);
+
+
+Filter
+Filter function is use to filter the function in an array
+const arr = [ 5,1,3,2,6];
+
+function isOdd(x) {
+    return x % 2;
+
+}
+const output = arr.filter(isOdd);
+console.log(output);
+
+
+Reduce:
+
+reduce function is used at aplace where you have to take all element of array and come up with single value out of them
+
+const arr = [ 5,1,3,2,6];
+
+function findSum(arr) {
+    let sum =0;
+    for ( let i=0;i<arr.length;i++){
+        sum = sum + arr[i];
+
+    }
+    return sum;
+}
+
+console.log(findSum(arr));
+const output = arr.reduce(function (acc,curr){
+    acc = acc + curr;
+    return acc;
+
+}, 0);s
